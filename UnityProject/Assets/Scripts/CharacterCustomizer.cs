@@ -1,117 +1,90 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.EventSystems;
 
 public class CharacterCustomizer : MonoBehaviour
 {
+    [Header("Appearance")]
 
-    public SpriteRenderer headgear;
-    public SpriteRenderer shield;
+    public CostumizerSlot headgearSlot;
+    public CostumizerSlot shieldSlot;
+
+    public Color[] colors;
+
+    [Header("Buttons")]
+
+    public Button headgearLeftButton;
+    public Button headgearRightButton;
+    public Button shieldLeftButton;
+    public Button shieldRightButton;
+
+    [Header("Body part")]
+
     public SpriteRenderer body;
     public SpriteRenderer leg_l;
     public SpriteRenderer leg_r;
 
-    int headgearID = 0;
-    int shieldID = 0;
+    [Header("Misc")]
 
-    [Header("Appearance")]
-    public Sprite[] headgearOptions;
-    public Sprite[] shieldOptions;
+    public Button colorButtonPrefab;
+    public Transform colorButtonParent;
 
+    private int headgearID = 0;
+    private int shieldID = 0;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        ChangeHeadgear(headgearID);
-        ChangeShield(shieldID);
+        headgearSlot.spriteRenderer.sprite = headgearSlot.sprites[headgearID];
+        shieldSlot.spriteRenderer.sprite = shieldSlot.sprites[shieldID];
+
+        GenerateColorButtons();
+
+        headgearLeftButton.onClick.AddListener(() => ChangeGear(ref headgearID, -1, headgearSlot));
+        headgearRightButton.onClick.AddListener(() => ChangeGear(ref headgearID, 1, headgearSlot));
+        shieldLeftButton.onClick.AddListener(() => ChangeGear(ref shieldID, -1, shieldSlot));
+        shieldRightButton.onClick.AddListener(() => ChangeGear(ref shieldID, 1, shieldSlot));
     }
 
-    void ChangeHeadgear(int index)
+    private void GenerateColorButtons()
     {
-        print("Headgear: " + index);
-        for (int i = 0; i < headgearOptions.Length; i++)
+        foreach (Color color in colors)
         {
-            if (i == index)
-            {
-                headgear.sprite = headgearOptions[i];
-            }
-        }
-    }
-
-    void ChangeShield(int index)
-    {
-        print("Shield: " + index);
-        for (int i = 0; i < shieldOptions.Length; i++)
-        {
-            if (i == index)
-            {
-                shield.sprite = shieldOptions[i];
-            }
+            Button newButton = Instantiate(colorButtonPrefab, colorButtonParent);
+            newButton.GetComponent<Image>().color = color;
+            // Add OnColorButtonClicked to each button.
+            newButton.onClick.AddListener(() => OnColorButtonClicked(color));
         }
     }
 
-    //buttonID: 0 = left Button, 1 = right Button
-    public void OnHeadgearArrowClicked(int buttonID)
+    // dir is -1 for left and +1 for right
+    private void ChangeGear(ref int id, int dir, CostumizerSlot costumizerSlot)
     {
-        //left Button
-        if (buttonID == 0)
+        id += dir;
+        if (id < 0)
         {
-            headgearID--;
-            if (headgearID < 0)
-            {
-                headgearID = headgearOptions.Length - 1;
-            }
+            id = costumizerSlot.sprites.Length - 1;
         }
-        //right Button
-        else if (buttonID == 1)
+        else if (id > costumizerSlot.sprites.Length - 1)
         {
-            headgearID++;
-            if (headgearID > headgearOptions.Length - 1)
-            {
-                headgearID = 0;
-            }
+            id = 0;
         }
-        //swap sprite
-        ChangeHeadgear(headgearID);
-
+        costumizerSlot.spriteRenderer.sprite = costumizerSlot.sprites[id];
     }
 
-    //buttonID: 0 = left Button, 1 = right Button
-    public void OnShieldArrowClicked(int buttonID)
+    private void OnColorButtonClicked(Color newColor)
     {
-        //left Button
-        if (buttonID == 0)
-        {
-            shieldID--;
-            if (shieldID < 0)
-            {
-                shieldID = shieldOptions.Length - 1;
-            }
-        }
-        //right Button
-        else if (buttonID == 1)
-        {
-            shieldID++;
-            if (shieldID > shieldOptions.Length - 1)
-            {
-                shieldID = 0;
-            }
-        }
-        //swap sprite
-        ChangeShield(shieldID);
-    }
-
-
-    public void OnColorButtonClicked()
-    {
-        Color newColor = EventSystem.current.currentSelectedGameObject.GetComponent<Image>().color;
+        // Color newColor = EventSystem.current.currentSelectedGameObject.GetComponent<Image>().color;
         body.color = newColor;
         leg_l.color = newColor;
         leg_r.color = newColor;
         print("Body color: " + newColor);
     }
+}
+
+[System.Serializable]
+public class CostumizerSlot
+{
+    public SpriteRenderer spriteRenderer;
+    public Sprite[] sprites;
 }
 
 
