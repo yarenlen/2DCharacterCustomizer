@@ -1,37 +1,19 @@
 fileFormatVersion: 2
-guid: d5b3925074b387a4ea37635aa73338ae
+guid: 27e44c6398d259d4c80f169ff37024bb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 21300000
-    second: headgear_1
+      213: 328039532180823927
+    second: shields_0
   - first:
-      213: 21300002
-    second: headgear_2
+      213: -5736757271575316636
+    second: shields_1
   - first:
-      213: 21300004
-    second: headgear_3
+      213: -6433363496192085588
+    second: shields_2
   - first:
-      213: 21300006
-    second: shield_1
-  - first:
-      213: 21300008
-    second: shield_2
-  - first:
-      213: 21300010
-    second: head
-  - first:
-      213: 21300012
-    second: weapon
-  - first:
-      213: 21300014
-    second: body
-  - first:
-      213: 21300016
-    second: leg_l
-  - first:
-      213: 21300018
-    second: leg_r
+      213: 7710633978311161596
+    second: shields_3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -110,142 +92,89 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: headgear_1
+      name: shields_0
       rect:
         serializedVersion: 2
-        x: 24
-        y: 758
-        width: 234
-        height: 238
-      alignment: 9
-      pivot: {x: 0.31701025, y: 0.7248933}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d2c2677042514214db0f50c4c0040e61
-      internalID: 21300000
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: headgear_2
-      rect:
-        serializedVersion: 2
-        x: 386
-        y: 826
-        width: 240
-        height: 136
-      alignment: 9
-      pivot: {x: 0.31432763, y: 0.16471684}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3ff6e44beb4dfa548ba8568787a84da0
-      internalID: 21300002
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: headgear_3
-      rect:
-        serializedVersion: 2
-        x: 732
-        y: 841
-        width: 212
-        height: 104
-      alignment: 9
-      pivot: {x: 0.3112704, y: 0.2193985}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6008a2109e4d26d429278e1c33b901c7
-      internalID: 21300004
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: head
-      rect:
-        serializedVersion: 2
-        x: 571
-        y: 548
-        width: 186
-        height: 178
+        x: 40
+        y: 39
+        width: 125
+        height: 190
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f082620bf7c3f814f9b619e4261f4b05
-      internalID: 21300010
+      spriteID: 9de97b883c088f84fa9a22ef5c7ce2ee
+      internalID: 328039532180823927
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: weapon
+      name: shields_1
       rect:
         serializedVersion: 2
-        x: 113
-        y: 131
-        width: 104
-        height: 225
+        x: 220
+        y: 38
+        width: 125
+        height: 190
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c18bcf8b667af2a48b0dbfc755774aa1
-      internalID: 21300012
+      spriteID: e1e55740c51f9c54ea1d71b3047532a7
+      internalID: -5736757271575316636
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: body
+      name: shields_2
       rect:
         serializedVersion: 2
-        x: 586
-        y: 324
-        width: 158
-        height: 177
+        x: 404
+        y: 26
+        width: 125
+        height: 190
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58b3feb970547ec408571af8d7223d74
-      internalID: 21300014
+      spriteID: e8a03e570a703804ba3a0bd4c01b6043
+      internalID: -6433363496192085588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shields_3
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 27
+        width: 125
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36336fbb43034164abebe9499ab46ad5
+      internalID: 7710633978311161596
       vertices: []
       indices: 
       edges: []
@@ -253,7 +182,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 7d50fa92287a215499150a6b734b18aa
+    spriteID: cdfc17268690b344b824a6b4570f40dc
     internalID: 0
     vertices: []
     indices: 

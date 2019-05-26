@@ -4,27 +4,23 @@ using UnityEngine.UI;
 public class CharacterCustomizer : MonoBehaviour
 {
     [Header("Appearance")]
-
     public CostumizerSlot headgearSlot;
     public CostumizerSlot shieldSlot;
 
     public Color[] colors;
 
     [Header("Buttons")]
-
     public Button headgearLeftButton;
     public Button headgearRightButton;
     public Button shieldLeftButton;
     public Button shieldRightButton;
 
-    [Header("Body part")]
-
+    [Header("Body parts")]
     public SpriteRenderer body;
     public SpriteRenderer leg_l;
     public SpriteRenderer leg_r;
 
     [Header("Misc")]
-
     public Button colorButtonPrefab;
     public Transform colorButtonParent;
 
@@ -72,11 +68,10 @@ public class CharacterCustomizer : MonoBehaviour
 
     private void OnColorButtonClicked(Color newColor)
     {
-        // Color newColor = EventSystem.current.currentSelectedGameObject.GetComponent<Image>().color;
         body.color = newColor;
-        leg_l.color = newColor;
-        leg_r.color = newColor;
-        print("Body color: " + newColor);
+        //leg_l.color = newColor;
+        //leg_r.color = newColor;
+        //print("Body color: " + newColor);
     }
 }
 
