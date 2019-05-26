@@ -9,4 +9,10 @@ public class Character : MonoBehaviour
     {
         DontDestroyOnLoad(this);
     }
+
+
+    private void Update()
+    {
+           
+    }
 }
